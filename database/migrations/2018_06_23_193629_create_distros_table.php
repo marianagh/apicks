@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTasksProductsTable extends Migration
+class CreateDistrosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateTasksProductsTable extends Migration
      */
     public function up()
     {
-        Schema::create('tasks_products', function (Blueprint $table) {
+        Schema::create('distros', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('store_id')->unsigned();
             $table->foreign('store_id')->references('id')->on('stores');
@@ -33,6 +33,6 @@ class CreateTasksProductsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tasks_products');
+        //
     }
 }
